@@ -105,7 +105,6 @@ class Stat extends StatefulWidget {
 }
 
 class StatState extends State<Stat> {
-  int _childCount = 0;
 
   void count() {
     bCount++;
@@ -120,30 +119,34 @@ class StatState extends State<Stat> {
         ),
       ),
       body: Card(
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Column(
+            Text('Previous Panel Button Press Count:',
+            style: TextStyle(fontSize: 20),),
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text('$bCount',
-                style: TextStyle(fontSize: 60),),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text('$bCount',
+                    style: TextStyle(fontSize: 60),),
+                  ],
+                ),
+                // Container(
+                //     margin: EdgeInsets.all(10),
+                //     child: FlatButton(
+                //       onPressed: () {
+                //         setState(() {
+                //           //NOTHING HERE YEt
+                //         });
+                //       },
+                //       child: Text('Refresh'),
+                //     ),
+                //   ),
               ],
             ),
-            Card(
-              child: Container(
-                margin: EdgeInsets.all(10),
-                child: FlatButton(
-                  onPressed: () {
-                    setState(() {
-                     print(_childCount);
-                     print('$bCount');
-                    });
-                  },
-                  child: Text('Refresh'),
-                ),
-              ),
-            )
           ],
         ),
       ),
