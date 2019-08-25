@@ -20,7 +20,8 @@ class CalculatorState extends State<Calculator> {
              _numDisplay = number;
             });
           },
-          child: Text(number.toString()),
+          child: Text(number.toString(),
+          style: TextStyle(fontSize: 30),),
         )
       ],
     );
@@ -38,7 +39,38 @@ class CalculatorState extends State<Calculator> {
       body: Column(
         children: <Widget>[
           Container(
-           child: Text(_numDisplay.toString()), 
+            margin: EdgeInsets.all(30),
+            child: Row (
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('$_numDisplay',
+                style: TextStyle(fontSize: 60),)
+              ],
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              _rowNum(7),
+              _rowNum(8),
+              _rowNum(9),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              _rowNum(4),
+              _rowNum(5),
+              _rowNum(6),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              _rowNum(1),
+              _rowNum(2),
+              _rowNum(3),
+            ],
           )
         ],
       )

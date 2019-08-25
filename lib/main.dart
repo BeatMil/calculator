@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         brightness: Brightness.light
       ),
-      home: Gish(),
+      home: Calculator(),
     );
   }
 }
