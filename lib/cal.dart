@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+int bCount = 0;
+
 class Calculator extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -10,7 +12,7 @@ class Calculator extends StatefulWidget {
 class  CalculatorState extends State<Calculator> {
 
   int _numDisplay = 0;
-  int _buttonCount = 0;
+  int _buttonCount = 6;
 
   int getButtonCount() {
     return _buttonCount;
@@ -24,7 +26,8 @@ class  CalculatorState extends State<Calculator> {
             setState(() {
              _numDisplay = number;
              _buttonCount++;
-             print(_buttonCount);
+             print('$_buttonCount CalPage');
+             StatState().count();
             //  _StatState()._buttonCount = this._buttonCount;
             //  _StatState().didUpdateWidget(Stat());
             });
@@ -96,16 +99,17 @@ class  CalculatorState extends State<Calculator> {
 }
 
 class Stat extends StatefulWidget {
-  final Function() notifyParent;
-  Stat({Key key, @required this.notifyParent}) : super(key: key);
 
   @override
   StatState createState() => StatState();
 }
 
 class StatState extends State<Stat> {
-  int _childCount = CalculatorState().getButtonCount();
+  int _childCount = 0;
 
+  void count() {
+    bCount++;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +126,7 @@ class StatState extends State<Stat> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text('$_childCount',
+                Text('$bCount',
                 style: TextStyle(fontSize: 60),),
               ],
             ),
@@ -132,8 +136,8 @@ class StatState extends State<Stat> {
                 child: FlatButton(
                   onPressed: () {
                     setState(() {
-                     _childCount = CalculatorState()._buttonCount; 
                      print(_childCount);
+                     print('$bCount');
                     });
                   },
                   child: Text('Refresh'),
