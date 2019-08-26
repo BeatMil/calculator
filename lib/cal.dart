@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 
 int bCount = 0;
 
+
+// Hi
+// Nick made a new comment here. Yay!
+// Good bye.
+
 class Calculator extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
