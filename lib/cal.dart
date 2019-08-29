@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './notification.dart';
+
 int bCount = 0;
 
 
@@ -46,9 +48,7 @@ class  CalculatorState extends State<Calculator> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'something',
-      home: Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text('Calculator'),
       ),
@@ -88,20 +88,36 @@ class  CalculatorState extends State<Calculator> {
               _rowNum(3),
             ],
           ),
-          FloatingActionButton(
-            child: Text('Count'),
-            onPressed: () {
-              Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Stat())
-              );
-            },
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FloatingActionButton(
+                child: Text('Count'),
+                onPressed: () {
+                  Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Stat())
+                  );
+                },
+              ),
+              FlatButton(
+                child: Text('Notification',
+                style: TextStyle(color: Colors.red),),
+                onPressed: () {
+                  Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => NotificationPage())
+                  );
+                },
+              )
+            ],
           )
         ],
       )
-    ),
     );
   }
 }
+
+
+
 
 class Stat extends StatefulWidget {
 
