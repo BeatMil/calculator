@@ -9,16 +9,17 @@ class NotificationPage extends StatefulWidget{
 
 class NotificationState extends State<NotificationPage> {
 
-  Widget _notificationTab () {
+  Widget _notificationTab (String imagePath, String messsage) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         Container(
-          child: Image.asset('assets/MugiQT.png',
+          child: Image.asset(imagePath,
           height: 80,
+          width: 80,
           ),
         ),
-        Text("Go outside is scary...",
+        Text(messsage,
         style: TextStyle(fontSize: 16),)
       ],
     );
@@ -51,7 +52,8 @@ class NotificationState extends State<NotificationPage> {
               ),
             ],
           ),
-          _notificationTab(),
+          _notificationTab('assets/MugiQT.png',"Go outside is scary..."),
+          _notificationTab('assets/milanor.jpg', "Steal!!!!!")
         ],
       ),
     );
