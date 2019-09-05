@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.nickrun.dotroot;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

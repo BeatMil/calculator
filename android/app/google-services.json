@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "978299899131",
+    "firebase_url": "https://dotroot-test.firebaseio.com",
+    "project_id": "dotroot-test",
+    "storage_bucket": "dotroot-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978299899131:android:25fb7884b9f3cc1071b45e",
+        "android_client_info": {
+          "package_name": "com.nickrun.dotroot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978299899131-guqunqn1noj24seqiku6vs824austa20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvKNdni8bzR4doj9Qc3CY4g5mclrRqd7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "978299899131-guqunqn1noj24seqiku6vs824austa20.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
