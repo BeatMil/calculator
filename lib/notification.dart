@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class NotificationPage extends StatefulWidget{
   @override
@@ -9,7 +10,7 @@ class NotificationPage extends StatefulWidget{
 
 class NotificationState extends State<NotificationPage> {
 
-  Widget _notificationTab (String imagePath, String messsage) {
+  Widget _notificationTab (String imagePath, String messsage, DocumentSnapshot document) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
@@ -19,8 +20,16 @@ class NotificationState extends State<NotificationPage> {
           width: 80,
           ),
         ),
-        Text(messsage,
-        style: TextStyle(fontSize: 16),)
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(document['name'],
+            style: TextStyle(fontSize: 20,
+            fontWeight: FontWeight.bold),),
+            Text(document['message'],
+            style: TextStyle(fontSize: 16),),
+          ],
+        )
       ],
     );
   }
@@ -37,24 +46,29 @@ class NotificationState extends State<NotificationPage> {
             ),
         iconTheme: IconThemeData(color: Colors.white),
       ),
-      body: Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+      body: StreamBuilder(
+        stream: Firestore.instance.collection('notification').snapshots,
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) return const Text('Loading...');
+          return Column(
             children: <Widget>[
-              Container(
-                margin: EdgeInsets.all(20),
-                child: Text('Clear All',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 18),
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.all(20),
+                    child: Text('Clear All',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 18),
+                    ),
+                  ),
+                ],
               ),
+              _notificationTab('assets/MugiQT.png', 'how????', snapshot.data.documents[2])
             ],
-          ),
-          _notificationTab('assets/MugiQT.png',"Go outside is scary..."),
-          _notificationTab('assets/milanor.jpg', "Steal!!!!!")
-        ],
+          );
+        }
       ),
     );
   }

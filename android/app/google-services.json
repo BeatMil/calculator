@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "128733673380",
+    "firebase_url": "https://rotdoot-ffe10.firebaseio.com",
+    "project_id": "rotdoot-ffe10",
+    "storage_bucket": "rotdoot-ffe10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128733673380:android:6b09f42204dfefc57e7331",
+        "android_client_info": {
+          "package_name": "com.example.calculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128733673380-nbsmvbibsi2s5nt10lng9d5g6jkrlckb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABx_kHqDhKzEUYGJwMxjlKSrPqCmuiiLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128733673380-nbsmvbibsi2s5nt10lng9d5g6jkrlckb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
