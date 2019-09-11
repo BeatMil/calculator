@@ -1,59 +1,34 @@
 {
   "project_info": {
-<<<<<<< HEAD
-    "project_number": "978299899131",
-    "firebase_url": "https://dotroot-test.firebaseio.com",
-    "project_id": "dotroot-test",
-    "storage_bucket": "dotroot-test.appspot.com"
-=======
     "project_number": "128733673380",
     "firebase_url": "https://rotdoot-ffe10.firebaseio.com",
     "project_id": "rotdoot-ffe10",
     "storage_bucket": "rotdoot-ffe10.appspot.com"
->>>>>>> 1104d35f7ef1e7233aba9d14b16f51d34b517cc7
   },
   "client": [
     {
       "client_info": {
-<<<<<<< HEAD
-        "mobilesdk_app_id": "1:978299899131:android:25fb7884b9f3cc1071b45e",
-        "android_client_info": {
-          "package_name": "com.nickrun.dotroot"
-=======
         "mobilesdk_app_id": "1:128733673380:android:6b09f42204dfefc57e7331",
         "android_client_info": {
           "package_name": "com.example.calculator"
->>>>>>> 1104d35f7ef1e7233aba9d14b16f51d34b517cc7
         }
       },
       "oauth_client": [
         {
-<<<<<<< HEAD
-          "client_id": "978299899131-guqunqn1noj24seqiku6vs824austa20.apps.googleusercontent.com",
-=======
           "client_id": "128733673380-nbsmvbibsi2s5nt10lng9d5g6jkrlckb.apps.googleusercontent.com",
->>>>>>> 1104d35f7ef1e7233aba9d14b16f51d34b517cc7
           "client_type": 3
         }
       ],
       "api_key": [
         {
-<<<<<<< HEAD
-          "current_key": "AIzaSyAvKNdni8bzR4doj9Qc3CY4g5mclrRqd7E"
-=======
           "current_key": "AIzaSyABx_kHqDhKzEUYGJwMxjlKSrPqCmuiiLA"
->>>>>>> 1104d35f7ef1e7233aba9d14b16f51d34b517cc7
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-<<<<<<< HEAD
-              "client_id": "978299899131-guqunqn1noj24seqiku6vs824austa20.apps.googleusercontent.com",
-=======
               "client_id": "128733673380-nbsmvbibsi2s5nt10lng9d5g6jkrlckb.apps.googleusercontent.com",
->>>>>>> 1104d35f7ef1e7233aba9d14b16f51d34b517cc7
               "client_type": 3
             }
           ]
