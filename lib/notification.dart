@@ -15,9 +15,8 @@ class NotificationState extends State<NotificationPage> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         Container(
-          child: Image.asset(imagePath,
+          child: Image.asset('assets/MugiQT.png',
           height: 80,
-          width: 80,
           ),
         ),
         Column(

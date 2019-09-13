@@ -50,11 +50,7 @@ class  CalculatorState extends State<Calculator> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Calculator',
-        style: TextStyle(
-          color: Colors.white, 
-          fontSize: 30),
-          ),
+        title: Text('Calculator'),
       ),
       body: Column(
         children: <Widget>[
