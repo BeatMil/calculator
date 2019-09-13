@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
-
+import 'package:flutter/rendering.dart';
+import './cal.dart';
+import './notification.dart';
 class BottomNav extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -13,11 +14,11 @@ class BottomNavState extends State<BottomNav> {
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
   Text(
-    'Index 0: Home',
+    'Index 0: Calculator',
     style: optionStyle,
   ),
   Text(
-     'Index 1: Business',
+     'Index 1: Notification',
      style: optionStyle,
   ),
   Text(
@@ -27,6 +28,7 @@ class BottomNavState extends State<BottomNav> {
 ];
 
 void _onItemTapped(int index) {
+  print('index: ' + index.toString());
   setState(() {
     _selectedIndex = index;
   });
@@ -39,7 +41,12 @@ Widget build(BuildContext context) {
       title: const Text('BottomNavigationBar Sample'),
     ),
     body: Center(
-      child: _widgetOptions.elementAt(_selectedIndex),
+      child: Column(
+        children: <Widget>[
+          _widgetOptions.elementAt(_selectedIndex),
+          Calculator(),
+        ],
+      ),
     ),
     bottomNavigationBar: BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
