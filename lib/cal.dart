@@ -16,6 +16,15 @@ class Calculator extends StatefulWidget {
   }
 }
 
+// class NotiState extends State<Calculator> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return AppBar(
+//       title: Text('Norton sucks'),
+//     );
+//   }
+// }
+
 class  CalculatorState extends State<Calculator> {
 
   int _numDisplay = 0;
@@ -48,11 +57,7 @@ class  CalculatorState extends State<Calculator> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Calculator'),
-      ),
-      body: Column(
+    return Column(
         children: <Widget>[
           Container(
             margin: EdgeInsets.all(30),
@@ -111,8 +116,7 @@ class  CalculatorState extends State<Calculator> {
             ],
           )
         ],
-      )
-    );
+      );
   }
 }
 

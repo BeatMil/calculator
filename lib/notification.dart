@@ -9,8 +9,7 @@ class NotificationPage extends StatefulWidget {
 }
 
 class NotificationState extends State<NotificationPage> {
-  Widget _notificationTab(
-      String imagePath, String messsage, DocumentSnapshot document) {
+  Widget _notificationTab(String imagePath, DocumentSnapshot document) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
@@ -42,27 +41,20 @@ class NotificationState extends State<NotificationPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'dotRoot/Notification',
-          style: TextStyle(fontSize: 25, color: Colors.white),
+          'Notification Page',
+          style: TextStyle(color: Colors.white),
         ),
-        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: StreamBuilder(
           stream: Firestore.instance.collection('notification').snapshots,
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) return const Text('Loading...');
+          builder: (context, snapshots) {
+            if (!snapshots.hasData) return const Text('Loading...');
             return ListView.builder(
-                padding: const EdgeInsets.all(8),
-                itemCount: snapshot.data.documents.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    height: 50,
-                    color: Colors.orange,
-                    child: Center(
-                      child: _notificationTab('assets/MugiQT.png', 'Hoo', snapshot.data.documents[index])
-                    ),
-                  );
-                });
+              itemExtent: 80,
+              itemCount: snapshots.data.documents.length,
+              itemBuilder: (context, index) => _notificationTab(
+                  'assets/MugiQT.png', snapshots.data.documents[index]),
+            );
           }),
     );
   }
