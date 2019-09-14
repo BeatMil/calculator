@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import './bottomNav.dart';
 
-import './cal.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         textTheme: TextTheme(title: TextStyle(color: Colors.white)),
         iconTheme: IconThemeData(color: Colors.white54)
       ),
-      home: Calculator(),
+      home: BottomNav(),
     );
   }
 }
