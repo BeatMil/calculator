@@ -16,6 +16,15 @@ class Calculator extends StatefulWidget {
   }
 }
 
+// class NotiState extends State<Calculator> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return AppBar(
+//       title: Text('Norton sucks'),
+//     );
+//   }
+// }
+
 class  CalculatorState extends State<Calculator> {
 
   int _numDisplay = 0;

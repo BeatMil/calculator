@@ -39,14 +39,13 @@ class NotificationState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'dotRoot/Notification',
-            style: TextStyle(fontSize: 25, color: Colors.white),
-          ),
-          iconTheme: IconThemeData(color: Colors.white),
+      appBar: AppBar(
+        title: Text(
+          'Notification Page',
+          style: TextStyle(color: Colors.white),
         ),
-        body: StreamBuilder(
+      ),
+      body: StreamBuilder(
           stream: Firestore.instance.collection('notification').snapshots,
           builder: (context, snapshots) {
             if (!snapshots.hasData) return const Text('Loading...');
@@ -56,7 +55,7 @@ class NotificationState extends State<NotificationPage> {
               itemBuilder: (context, index) => _notificationTab(
                   'assets/MugiQT.png', snapshots.data.documents[index]),
             );
-          },
-        ));
+          }),
+    );
   }
 }

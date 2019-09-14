@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import './cal.dart';
 import './notification.dart';
+import './fish.dart';
 class BottomNav extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -11,6 +12,8 @@ class BottomNav extends StatefulWidget {
 
 class BottomNavState extends State<BottomNav> {
   int _selectedIndex = 0;
+  final List<Widget> _children = [Calculator(), Fish(), Fish()];
+
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
   Text(
@@ -29,9 +32,16 @@ class BottomNavState extends State<BottomNav> {
 
 void _onItemTapped(int index) {
   print('index: ' + index.toString());
-  setState(() {
-    _selectedIndex = index;
-  });
+  if (index > 1) {
+    Navigator.push(context,
+    MaterialPageRoute(builder: (context) => NotificationPage()));
+    print("index is more than 2 : $index");
+  }
+  else {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 }
 
 @override
@@ -44,7 +54,7 @@ Widget build(BuildContext context) {
       child: Column(
         children: <Widget>[
           _widgetOptions.elementAt(_selectedIndex),
-          Calculator(),
+          _children[_selectedIndex]
         ],
       ),
     ),
@@ -52,7 +62,7 @@ Widget build(BuildContext context) {
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          title: Text('Home'),
+          title: Text('Homy'),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.business),
