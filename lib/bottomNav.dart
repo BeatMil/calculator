@@ -51,14 +51,11 @@ Widget build(BuildContext context) {
       title: const Text('DotRoot',
       style: TextStyle(color: Colors.white),),
     ),
-    body: Center(
-      child: Column(
+    body: Column(
         children: <Widget>[
-          _widgetOptions.elementAt(_selectedIndex),
           _children[_selectedIndex]
         ],
       ),
-    ),
     bottomNavigationBar: BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
