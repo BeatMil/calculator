@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import './bottomNav.dart';
 
@@ -116,13 +115,9 @@ class _LoginState extends State<Login> {
   String email;
   String password;
 
-  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> loginUser() async {
-    FirebaseUser user = (await _auth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    )) as FirebaseUser;
+
 
     Navigator.push(
         context,
@@ -186,22 +181,6 @@ class _RegistrationState extends State<Registration> {
   String email;
   String password;
 
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-
-  Future<void> registerUser() async {
-    FirebaseUser user = (await _auth.createUserWithEmailAndPassword(
-      email: email,
-      password: password,
-    )) as FirebaseUser;
-
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Chat(user: user),
-        ));
-  }
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -237,7 +216,6 @@ class _RegistrationState extends State<Registration> {
           CustomButton(
             text: 'Register',
             callback: () async {
-              await registerUser();
             },
           ),
         ],
@@ -248,17 +226,15 @@ class _RegistrationState extends State<Registration> {
 
 class Chat extends StatefulWidget {
   static const String id = "CHAT";
-  final FirebaseUser user;
+  
 
-  const Chat({Key key, this.user}) : super(key: key);
 
   @override
   _ChatState createState() => _ChatState();
 }
 
 class _ChatState extends State<Chat> {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final Firestore _firestore = Firestore.instance;
+  // final Firestore _firestore = Firestore.instance;
 
   TextEditingController messageController = TextEditingController();
   ScrollController scrollController = ScrollController();
