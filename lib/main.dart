@@ -1,11 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import './bottomNav.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         Login.id: (context) => Login(),
         Registration.id: (context) => Registration(),
         Chat.id: (context) => Chat(),
+        BottomNav.id: (context) => BottomNav(),
       },
     );
   }
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   static const String id = "HOMESCREEN";
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -77,6 +80,7 @@ class CustomButton extends StatelessWidget {
 
   const CustomButton({Key key, this.callback, this.text}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -103,6 +107,7 @@ class CustomButton extends StatelessWidget {
 
 class Login extends StatefulWidget {
   static const String id = "LOGIN";
+
   @override
   _LoginState createState() => _LoginState();
 }
@@ -122,9 +127,10 @@ class _LoginState extends State<Login> {
     Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => Chat(user: user),
+          builder: (context) => BottomNav(),
         ));
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -159,7 +165,9 @@ class _LoginState extends State<Login> {
                   hintText: 'Password', border: const OutlineInputBorder())),
           CustomButton(
             text: 'Login',
-            callback: () async {},
+            callback: () async {
+              Navigator.of(context).pushNamed(BottomNav.id);
+            },
           )
         ],
       ),
@@ -169,6 +177,7 @@ class _LoginState extends State<Login> {
 
 class Registration extends StatefulWidget {
   static const String id = "REGISTRATION";
+
   @override
   _RegistrationState createState() => _RegistrationState();
 }
@@ -191,6 +200,7 @@ class _RegistrationState extends State<Registration> {
           builder: (context) => Chat(user: user),
         ));
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -241,6 +251,7 @@ class Chat extends StatefulWidget {
   final FirebaseUser user;
 
   const Chat({Key key, this.user}) : super(key: key);
+
   @override
   _ChatState createState() => _ChatState();
 }
@@ -251,6 +262,7 @@ class _ChatState extends State<Chat> {
 
   TextEditingController messageController = TextEditingController();
   ScrollController scrollController = ScrollController();
+
 
   @override
   Widget build(BuildContext context) {

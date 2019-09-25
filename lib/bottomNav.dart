@@ -4,6 +4,8 @@ import './cal.dart';
 import './notification.dart';
 import './chat.dart';
 class BottomNav extends StatefulWidget {
+  static const String id = "BOTTOMNAV";
+
   @override
   State<StatefulWidget> createState() {
     return BottomNavState();
