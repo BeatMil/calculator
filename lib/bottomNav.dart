@@ -15,20 +15,6 @@ class BottomNavState extends State<BottomNav> {
   final List<Widget> _children = [Calculator(), ChatScreen(), Calculator()];
 
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-  Text(
-    'HomePage (feed)',
-    style: optionStyle,
-  ),
-  Text(
-     'Chat',
-     style: optionStyle,
-  ),
-  Text(
-     'Notification',
-     style: optionStyle,
-  ),
-];
 
 void _onItemTapped(int index) {
   print('index: ' + index.toString());
