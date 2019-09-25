@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import './cal.dart';
 import './notification.dart';
-import './fish.dart';
+import './chat.dart';
 class BottomNav extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -12,20 +12,20 @@ class BottomNav extends StatefulWidget {
 
 class BottomNavState extends State<BottomNav> {
   int _selectedIndex = 0;
-  final List<Widget> _children = [Calculator(), Fish(), Fish()];
+  final List<Widget> _children = [Calculator(), ChatScreen(), Calculator()];
 
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
   Text(
-    'Index 0: Calculator',
+    'HomePage (feed)',
     style: optionStyle,
   ),
   Text(
-     'Index 1: Notification',
+     'Chat',
      style: optionStyle,
   ),
   Text(
-     'Index 2: School',
+     'Notification',
      style: optionStyle,
   ),
 ];
@@ -35,7 +35,7 @@ void _onItemTapped(int index) {
   if (index > 1) {
     Navigator.push(context,
     MaterialPageRoute(builder: (context) => NotificationPage()));
-    print("index is more than 2 : $index");
+    print("index is more than 1 : $index");
   }
   else {
     setState(() {
@@ -48,16 +48,10 @@ void _onItemTapped(int index) {
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
-      title: const Text('BottomNavigationBar Sample'),
+      title: const Text('DotRoot',
+      style: TextStyle(color: Colors.white),),
     ),
-    body: Center(
-      child: Column(
-        children: <Widget>[
-          _widgetOptions.elementAt(_selectedIndex),
-          _children[_selectedIndex]
-        ],
-      ),
-    ),
+    body: _children[_selectedIndex],
     bottomNavigationBar: BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
@@ -65,12 +59,12 @@ Widget build(BuildContext context) {
           title: Text('Homy'),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.business),
-          title: Text('Business'),
+          icon: Icon(Icons.chat_bubble),
+          title: Text('Chat'),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.school),
-          title: Text('School'),
+          icon: Icon(Icons.notifications),
+          title: Text('Notification'),
         ),
       ],
       currentIndex: _selectedIndex,
