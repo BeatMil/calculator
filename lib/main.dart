@@ -9,21 +9,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-<<<<<<< HEAD
-      title: 'dotRoot ',
-      theme: ThemeData(
-        primarySwatch: Colors.orange,
-        brightness: Brightness.light,
-        backgroundColor: Colors.red,
-        appBarTheme: AppBarTheme(color: Colors.black87),
-        textTheme: TextTheme(title: TextStyle(color: Colors.white)),
-        iconTheme: IconThemeData(color: Colors.white54)
-      ),
-      home: new BottomNav(),
-    );
-  }
-}
-=======
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
@@ -253,7 +238,6 @@ class _ChatState extends State<Chat> {
 
   TextEditingController messageController = TextEditingController();
   ScrollController scrollController = ScrollController();
->>>>>>> 9c1678f6e5430eb87b01d2cdf39b3f7fc9aa97dc
 
 
   @override
