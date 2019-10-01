@@ -54,6 +54,21 @@ class ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
+    return Column(
+      children: <Widget>[
+        ListView.builder(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            reverse: true,
+            itemBuilder: (_, int index) => _messages[index],
+            itemCount: _messages.length,
+          ),
+        new Container(
+          child: _buildTextComposer(),
+        )
+      ],
+=======
     return new Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.end,
@@ -75,6 +90,7 @@ class ChatScreenState extends State<ChatScreen> {
             child: _buildTextComposer(),
           )
         ]
+>>>>>>> 9c1678f6e5430eb87b01d2cdf39b3f7fc9aa97dc
     );
   }
 }
