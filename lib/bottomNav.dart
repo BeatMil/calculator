@@ -3,6 +3,8 @@ import 'package:flutter/rendering.dart';
 import './cal.dart';
 import './notification.dart';
 import './chat.dart';
+import './profile.dart';
+
 class BottomNav extends StatefulWidget {
   static const String id = "BOTTOMNAV";
 
@@ -14,13 +16,13 @@ class BottomNav extends StatefulWidget {
 
 class BottomNavState extends State<BottomNav> {
   int _selectedIndex = 0;
-  final List<Widget> _children = [Calculator(), ChatScreen(), Calculator()];
+  final List<Widget> _children = [Calculator(), ChatScreen(), Profiles(), Calculator()];
 
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
 void _onItemTapped(int index) {
   print('index: ' + index.toString());
-  if (index > 1) {
+  if (index > 2) {
     Navigator.push(context,
     MaterialPageRoute(builder: (context) => NotificationPage()));
     print("index is more than 1 : $index");
@@ -49,6 +51,10 @@ Widget build(BuildContext context) {
         BottomNavigationBarItem(
           icon: Icon(Icons.chat_bubble),
           title: Text('Chat'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.portrait),
+          title: Text('Profile'),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.notifications),
