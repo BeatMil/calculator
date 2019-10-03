@@ -5,9 +5,18 @@ class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
+/*
+this home page is actaully kind of the same as notification page
+except that it has bottomnavigation
+wait
+that means I can make notification page with bottomnav...
+So just to make a difference I will not put bottom nav there.
+Am I gonna pass this class?
+I love you Ajarn >w<
+ */
 
 class _HomeState extends State<Home> {
-  Widget _notificationTab(String imagePath, DocumentSnapshot document) {
+  Widget _notificationTab(String imagePath, DocumentSnapshot document) {                 
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[

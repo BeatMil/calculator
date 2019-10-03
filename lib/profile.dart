@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class Profiles extends StatefulWidget {
+class Profiles extends StatefulWidget {                                         //profile page
   @override
   _ProfilesState createState() => _ProfilesState();
 }
@@ -11,7 +11,7 @@ class _ProfilesState extends State<Profiles> {
   String name = "[Insert name here]";
   String description = "[Insert description here]";
 
-  Widget _notificationTab(String imagePath, DocumentSnapshot document) {
+  Widget _notificationTab(String imagePath, DocumentSnapshot document) {            // a ready-to-use widget that is used to make a list of notification.
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
@@ -40,12 +40,12 @@ class _ProfilesState extends State<Profiles> {
 
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {                              
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Row(
+        Row(                                                        // profile image in this row
           children: <Widget>[
             Container(
               margin: const EdgeInsets.all(15.0),
@@ -60,7 +60,7 @@ class _ProfilesState extends State<Profiles> {
             ),
           ],
         ),
-        Row(
+        Row(                                                       // name is this row
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Container(
@@ -72,7 +72,7 @@ class _ProfilesState extends State<Profiles> {
             ),
           ],
         ),
-        Row(
+        Row(                                                       // description is this row
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Container(
@@ -83,10 +83,10 @@ class _ProfilesState extends State<Profiles> {
         Divider(
           indent: 10,
         ),
-        Container(
+        Container(                                                // the post, like and reroot tabs
           decoration: BoxDecoration(color: Colors.orange),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,     
             children: <Widget>[
               Container(
                 child: Text(
@@ -113,7 +113,7 @@ class _ProfilesState extends State<Profiles> {
             ],
           ),
         ),
-        new Flexible(
+        new Flexible(                                       // generate the listview from firebase how ever the data is hard coded in firebase
           child: StreamBuilder(
             stream: Firestore.instance.collection('post').snapshots,
             builder: (context, snapshots) {
