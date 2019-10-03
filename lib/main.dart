@@ -2,6 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import './bottomNav.dart';
 
+
+//first page
+// including register page and login page
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

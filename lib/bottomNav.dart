@@ -1,9 +1,11 @@
+import 'package:calculator/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import './cal.dart';
 import './notification.dart';
 import './chat.dart';
 import './profile.dart';
+import './home.dart';
 
 class BottomNav extends StatefulWidget {
   static const String id = "BOTTOMNAV";
@@ -16,7 +18,7 @@ class BottomNav extends StatefulWidget {
 
 class BottomNavState extends State<BottomNav> {
   int _selectedIndex = 0;
-  final List<Widget> _children = [Calculator(), ChatScreen(), Profiles(), Calculator()];
+  final List<Widget> _children = [Home(), ChatScreen(), Profiles(), Calculator()];
 
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
