@@ -9,7 +9,7 @@ class NotificationPage extends StatefulWidget {
 }
 
 class NotificationState extends State<NotificationPage> {
-  Widget _notificationTab(String imagePath, DocumentSnapshot document) {
+  Widget _notificationTab(String imagePath, DocumentSnapshot document) {        // a ready-to-use widget that is used to make a list of notification.(2)
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
@@ -37,7 +37,7 @@ class NotificationState extends State<NotificationPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {            // fullscreen listview that shows notification from firebase (hard coded from firebase)
     return Scaffold(
       appBar: AppBar(
         title: Text(
